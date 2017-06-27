@@ -1,0 +1,7 @@
+Credentials cache: API:24705
+        Principal: ysong@42.US.ORG
+
+  Issued                Expires               Principal
+Jun 26 14:13:47 2017  Jun 27 00:13:47 2017  krbtgt/42.US.ORG@42.US.ORG
+Jun 26 14:13:49 2017  Jun 27 00:13:47 2017  ldap/ldap-proxy.42.us.org@42.US.ORG
+Jun 26 14:20:42 2017  Jun 27 00:13:47 2017  host/vgs-fn1.42.us.org@42.US.ORG
