@@ -1,0 +1,8 @@
+This is a tricky exercise.
+for the exercise 01, creating files, only leave the tar file in the folder, and remove everything else!!!!
+
+for creating files. use touch -a(Change the access time of the file) -m(modify the time, and must use with a) —t(timestamp) 2017 06012342.
+
+i.e: touch -a -m -t 201706012342 testDay00
+
+for more information, use man touch.
