@@ -1,0 +1,36 @@
+void	ft_print_comnb(int n)
+{
+	int digit[n];
+	int nth_col;
+	int temp;
+	
+	temp = -1;
+	nth_col = n - 1;
+	while (++temp < n)
+	    digit[temp] = temp;
+	while (digit[0] <= 9 - (n - 1))
+	{
+		while (digit[nth_col] == 9 + nth_col - (n - 1) && nth_col > 0)
+		    --nth_col;
+		int temp2;
+		int temp3;
+		
+		temp2 = 0;
+		temp3 = nth_col;
+	    while (temp2 < n)
+	        ft_putchar(digit[temp2++] + 48);
+		if (digit[0] != 9 - (n-1))
+	    {
+		    ft_putchar(',');
+			ft_putchar(' ');
+		}
+		
+		++digit[nth_col];
+
+		while (++temp3 < n)
+			digit[temp3] = digit[temp3-1] + 1;
+		nth_col = n-1;
+
+	}
+
+}
