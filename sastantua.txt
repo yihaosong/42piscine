@@ -31,6 +31,39 @@ void ft_display_space(int space_count)
     ft_putchar('\n');
 }
 
+int		base_width(int space_count)
+{
+	return (space_count + 2) * 2 -1;
+}
+
+void	put_blocks(int size, int level, int width, int row_num)
+{
+	int door_width;
+	int pos;
+	
+	door_width = 1 + 2 * ((level - 1) / 2);
+	pos = 0;
+	while (pos < width)
+	{
+		if (pos == 0)
+			ft_putchar('/');
+		else if (pos == width - 1)
+			ft_putchar('\\');
+		else
+		{
+			if (level == size && pos >= (width - door_width) / 2
+					&& pos < (width + door_width) / 2 && 2 + level - row_num <= door_width)
+				if (door_width >= 5 && row_num == 2 + level - door_width / 2 - 1 && pos == (width + door_width) / 2 - 2)
+					ft_putchar('$');
+				else
+					ft_putchar('|');
+			else
+				ft_putchar('*');
+		}
+		pos++;
+	}
+}
+
 int main()
 {
     int level = 3;
