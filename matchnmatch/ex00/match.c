@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   match.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysong <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 21:17:58 by ysong             #+#    #+#             */
-/*   Updated: 2017/07/06 21:25:33 by ysong            ###   ########.fr       */
+/*   Created: 2017/07/08 09:32:00 by ysong             #+#    #+#             */
+/*   Updated: 2017/07/09 12:32:46 by ysong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-
-typedef int			t_bool;
-# define EVEN(x)	(!(x % 2))
-# define TRUE 		1
-# define FALSE 		0
-# define EVEN_MSG 	"I have an even number of arguments.\n"
-# define ODD_MSG 	"I have an odd number of arguments.\n"
-# define SUCCESS 	0
-
-#endif
+int	match(char *s1, char *s2)
+{
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
+	if (*s2 == '*')
+	{
+		if (*s1 == '\0')
+			return (match(s1, s2 + 1));
+		else
+			return (match(s1 + 1, s2) || match(s1, s2 + 1));
+	}
+	else if (*s1 == *s2)
+		return (match(s1 + 1, s2 + 1));
+	else
+		return (0);
+}
