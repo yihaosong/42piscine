@@ -6,7 +6,7 @@
 /*   By: jchung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 19:43:07 by jchung            #+#    #+#             */
-/*   Updated: 2017/07/09 22:33:58 by cwilson          ###   ########.fr       */
+/*   Updated: 2017/07/09 23:01:07 by ysong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	print_table(int *table[])
 		{
 			num = table[i][j] + '0';
 			write(1, &num, 1);
-			write(1, " ", 1);
+			if (j < 8)
+				write(1, " ", 1);
 		}
 		write(1, "\n", 1);
 	}
@@ -125,7 +126,7 @@ int		main(int argc, char **argv)
 	fill_table(table, ++argv);
 	if (!solve_table(table, 0, 0) || argc != 10)
 	{
-		printf("Error.\n");
+		write(1, "Error\n", 6);
 		return (0);
 	}
 	print_table(table);

@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	{
 		if (ft_atoi(argv[3]) == 0 && op_set[op_pos] == '/')
 			ft_putstr("Stop : division by zero\n");
-		else if (ft_atoi(argv[3]) && op_set[op_pos] == '%')
+		else if (ft_atoi(argv[3]) == 0 && op_set[op_pos] == '%')
 			ft_putstr("Stop : modulo by zero\n");
 		else
 		{
