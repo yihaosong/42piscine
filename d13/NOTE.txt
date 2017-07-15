@@ -1,0 +1,15 @@
+For question ex01 - ex3, the prefix, infix, suffix code, it is reasonable to do things like checking the root is null at the beginning.
+
+such as:
+void	btree_apply_prefix(t_btree *root, void (*applyf)(void *))
+{
+	if (root)
+	{
+		(*applyf)(root->item);
+		if (root->left)
+			btree_apply_prefix(root->left, applyf);
+		if (root->right)
+			btree_apply_prefix(root->right, applyf);
+	}
+	return ;
+}
