@@ -1,0 +1,6 @@
+Mostly Credit by Xuan You Lim.
+
+The program can’t deal with reading from standard in put, the reason is that we didn’t use memory to store the map, so after reading one time, we won’t able to print the content. 
+
+The atoi function will need to be modify, because if the first line of the map, which is the title is all number, then the line count get by ft_atoi function wont’t match.
+the more ideal way should extract the last 3 element from the string, and do ft_atoi for the first part.

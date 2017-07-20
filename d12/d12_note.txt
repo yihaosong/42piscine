@@ -1,4 +1,12 @@
 D12 incomplete, with uncertain solution.
 
 for exercise01, should has the same behavior as cat.
-so when their is no argument, use while (write(0,&c,1)),then read(1,&c,1);
+so when their is no argument, use:
+
+	if (argc < 2)
+    {
+        while (read(1, &c, 1))
+        {
+            write(0, &c, 1);
+        }
+    }
