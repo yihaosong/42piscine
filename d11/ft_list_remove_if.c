@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include "ft_list.h"
 
+
+//My code
 void	ft_list_remove_if(t_list **begin_list, void *data_ref,
 		int (*cmp)())
 {
@@ -44,5 +46,3 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref,
 		(*begin_list) = prev;
 	}
 }
-
-//My code

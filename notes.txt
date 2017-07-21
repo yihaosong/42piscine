@@ -1,0 +1,115 @@
+in unix:
+	cat is used for check the content of a file.
+
+	touch -a(Change the access time of the file) -m(modify) —t(timestamp) 2017 06012342
+	
+
+	sed is usually used for text substitution.
+	source:http://www.folkstalk.com/2012/01/sed-command-in-unix-examples.html
+	example: >cat file.txt
+	unix is great os. unix is opensource. unix is free os.
+	learn operating system.
+	unixlinux which one you choose.
+
+	Sed Command Examples
+
+	1. Replacing or substituting string
+
+	Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word "unix" with "linux" in the file.
+
+	>sed 's/unix/linux/' file.txt
+	linux is great os. unix is opensource. unix is free os.
+	learn operating system.
+	linuxlinux which one you choose.
+
+	Here the "s" specifies the substitution operation. The "/" are delimiters. The "unix" is the search pattern and the "linux" is the replacement string.
+
+	By default, the sed command replaces the first occurrence of the pattern in each line and it won't replace the second, third...occurrence in the line.
+
+	2. Replacing the nth occurrence of a pattern in a line.
+
+
+
+
+	diff originalfile updatedfile > patchfile.patch
+
+	patch originalfile -i patchfile.patch -o updatedfile
+
+
+
+	ldapmodify -h leap-master.42.us.org -f mobile-phone.ldif
+
+
+
+	The find function in unix
+	-delete: Delete found files and/or directories.  Always returns true.  This executes from the current working direc-
+             tory as find recurses down the tree.  It will not attempt to delete a filename with a ``/'' character in
+             its pathname relative to ``.'' for security reasons.  Depth-first traversal processing is implied by this
+             option.  Following symlinks is incompatible with this option.
+
+
+     -name pattern
+             True if the last component of the pathname being examined matches pattern.  Special shell pattern matching
+             characters (``['', ``]'', ``*'', and ``?'') may be used as part of pattern.  These characters may be
+             matched explicitly by escaping them with a backslash (``\'').
+
+
+
+	wc: word count. output format is word, line, characters.
+
+	env: show the environment variables, use export to add environment variable.
+
+
+	cat file.txt file.txt file.txt asdkfjoipepawupoifuoicvk > /dev/null
+	//This command will only show the error message. since the /dev/null file does not exist, so cat won’t store the data in file.txt, which is empty. And because of this, we can see the error message when try to cat asdkfjoipepawupoifuoicvk.
+
+	naming files with special characters:
+	https://www.tecmint.com/manage-linux-filenames-with-special-characters/
+
+
+	sed -n '1!p'
+	don’t print the first line
+
+
+	cat /etc/passwd | grep -v '#' | sed -n 'n;p;d' | cut -d ':' -f 1 | rev | sort -r | sed -n '8,16p' | tr '\n' ',' | sed 's/,/, /g' | sed 's/..$/\./'
+
+	cat /etc/passwd | grep -v '#' | sed -n 'n;p;d' | cut -d ':' -f 1 | rev | sort -r | sed -n '${FT_LINE1},${FT_LINE2} p' | tr '\n' ',' | sed 's/,/, /g' | sed 's/..$/\./'
+
+
+
+	FT_NBR1="\\'?\"\\\"'\\" | echo $FT_NBR1
+
+
+	a string: “toto” has 5 characters, since there is always a ‘\0’ at the end.
+
+	char *ptr = “toto”, we can’t modify the string with ptr[0] = ‘p’, it is illegal.
+	we need to use char ptr[] = “toto”, (still has 5 characters), so it is legal to do ptr[0] = ‘p’ 
+
+	cat ex*/*.c
+
+
+
+	gcc main.c ft_param_to_tab.c ft_split_whitespaces.c ft_putchar.c ft_show_tab.c -o testing    
+	./testing "Looks like this code is working" "This is the second argument" "This is the third"
+
+
+	man awk:
+	NF     number of fields in the current record
+	awk '{print $(NF-1)}
+
+
+	source: http://www.networkworld.com/article/2694880/unix-stat-more-than-ls.html
+		https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/stat.1.html
+	look at the file's time of access expressed as seconds since the Epoch
+
+	https://www.gnu.org/software/make/manual/html_node/Text-Functions.html
+
+	https://stackoverflow.com/questions/2145590/what-is-the-purpose-of-phony-in-a-makefile
+
+	https://ranjiniloveslinux.wordpress.com/2012/03/13/what-is-phony-in-makefile/
+
+	http://codewiki.wikidot.com/c:system-calls:open
+
+	for printing memory: array, pointer to array,
+	https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm
+
